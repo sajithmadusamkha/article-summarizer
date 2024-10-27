@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 import {
   FormBuilder,
   FormGroup,
@@ -25,6 +27,8 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     CommonModule,
     MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -40,7 +44,7 @@ export class AppComponent {
   constructor(private fb: FormBuilder, private articleService: ArticleService) {
     this.summaryForm = this.fb.group({
       url: ['', Validators.required],
-      targetLanguage: ['en', Validators.required],
+      targetLanguage: ['', Validators.required],
     });
   }
 
@@ -62,5 +66,12 @@ export class AppComponent {
         }
       );
     }
+  }
+
+  clearForm(): void {
+    this.summaryForm.reset();
+    this.summaryData = null;
+    this.errorMessage = null;
+    this.summaryForm.clearValidators();
   }
 }

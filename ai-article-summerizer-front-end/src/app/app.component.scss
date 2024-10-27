@@ -1,0 +1,52 @@
+// Center the container and form on the page
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #f4f6f8;
+  overflow-y: auto; // Add vertical scroll only when needed
+
+  h2 {
+    font-size: 1.8rem;
+    color: #3f51b5;
+    margin-bottom: 20px;
+  }
+
+  .form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .mat-spinner {
+    margin-top: 20px;
+  }
+
+  .summary-results {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 600px;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
