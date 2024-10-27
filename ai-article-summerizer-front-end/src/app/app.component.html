@@ -3,27 +3,33 @@
 
   <div class="form-container">
     <form [formGroup]="summaryForm" (ngSubmit)="onSubmit()">
-      <mat-form-field appearance="fill">
-        <mat-label>Article URL</mat-label>
-        <input matInput formControlName="url" placeholder="Enter article URL" />
-        <mat-error *ngIf="summaryForm.get('url')?.hasError('required')">
-          URL is required
-        </mat-error>
-      </mat-form-field>
+      <div class="input-row">
+        <mat-form-field class="url-field" appearance="fill">
+          <mat-label>Article URL</mat-label>
+          <input
+            matInput
+            formControlName="url"
+            placeholder="Enter article URL"
+          />
+          <mat-error *ngIf="summaryForm.get('url')?.hasError('required')">
+            URL is required
+          </mat-error>
+        </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>Select Language</mat-label>
-        <mat-select
-          formControlName="targetLanguage"
-          placeholder="Select Language"
-        >
-          <mat-option value="en">English</mat-option>
-          <mat-option value="es">Spanish</mat-option>
-          <mat-option value="fr">French</mat-option>
-          <mat-option value="de">German</mat-option>
-          <!-- Add more language options as needed -->
-        </mat-select>
-      </mat-form-field>
+        <mat-form-field class="language-field">
+          <mat-label>Select Language</mat-label>
+          <mat-select
+            formControlName="targetLanguage"
+            placeholder="Select Language"
+          >
+            <mat-option value="en">English</mat-option>
+            <mat-option value="es">Spanish</mat-option>
+            <mat-option value="fr">French</mat-option>
+            <mat-option value="de">German</mat-option>
+            <!-- Add more language options as needed -->
+          </mat-select>
+        </mat-form-field>
+      </div>
 
       <div class="button-group">
         <button
@@ -34,12 +40,7 @@
         >
           Summarize
         </button>
-        <button
-          mat-raised-button
-          color="warn"
-          type="button"
-          (click)="clearForm()"
-        >
+        <button mat-raised-button color="warn" (click)="clearForm()">
           Clear
         </button>
       </div>

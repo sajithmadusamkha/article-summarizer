@@ -34,7 +34,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'ai-article-summerizer-front-end';
+  title = 'Sum Rice';
 
   summaryForm: FormGroup | any;
   summaryData: SummaryResponse | null = null;
