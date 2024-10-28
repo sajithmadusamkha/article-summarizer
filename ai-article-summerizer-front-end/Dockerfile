@@ -5,7 +5,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy the built Angular app files to the nginx web server directory
-COPY dist/news-summary-frontend /usr/share/nginx/html
+COPY dist/ai-article-summerizer-front-end /usr/share/nginx/html
 
 # Expose port 80 to the outside world
 EXPOSE 80
