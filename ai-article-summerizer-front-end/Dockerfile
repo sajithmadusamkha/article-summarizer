@@ -1,14 +1,12 @@
-# Use the official Nginx image as the base image
+# Frontend Dockerfile
+FROM node:18 as build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
 FROM nginx:alpine
-
-# Remove default nginx website
-RUN rm -rf /usr/share/nginx/html/*
-
-# Copy the built Angular app files to the nginx web server directory
-COPY dist/ai-article-summerizer-front-end /usr/share/nginx/html
-
-# Expose port 80 to the outside world
+COPY --from=build /app/dist/ai-article-summerizer-front-end /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-
-# Start nginx server
-CMD ["nginx", "-g", "daemon off;"]
