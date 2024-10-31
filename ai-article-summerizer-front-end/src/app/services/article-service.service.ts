@@ -18,7 +18,7 @@ export interface SummaryResponse {
   providedIn: 'root',
 })
 export class ArticleService {
-  private apiUrl = 'http://127.0.0.1:8000/summarize';
+  private apiUrl = 'http://13.61.19.197:80/summarize';
 
   constructor(private http: HttpClient) {}
 

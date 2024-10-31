@@ -26,7 +26,6 @@
             <mat-option value="es">Spanish</mat-option>
             <mat-option value="fr">French</mat-option>
             <mat-option value="de">German</mat-option>
-            <!-- Add more language options as needed -->
           </mat-select>
         </mat-form-field>
       </div>
@@ -57,11 +56,11 @@
     <p>
       <strong>Translated Summary:</strong> {{ summaryData.translated_summary }}
     </p>
-    <p>
+    <!-- <p>
       <strong>Sentiment:</strong>
       {{ summaryData.sentiment.sentiment }} (Polarity:
       {{ summaryData.sentiment.polarity }})
-    </p>
+    </p> -->
   </div>
 
   <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
